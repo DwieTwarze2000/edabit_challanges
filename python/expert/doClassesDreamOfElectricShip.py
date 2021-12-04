@@ -71,13 +71,14 @@ class Battleship:
     
     def sunk(self):
         sunk = 0
+        board = self.board()
         for i in range(5):
             for j in range(5):
                 if i+1 <5 and j+1 <5:
-                    if self.board()[i][j] == "X" and (self.board()[i+1][j] == "X" or self.board()[i][j+1]== "X"):
+                    if board[i][j] == "X" and (board[i+1][j] == "X" or board[i][j+1]== "X"):
                         sunk+=1
                 if i-1 >=0 and j-1 >= 0:
-                    if self.board()[i][j] == "X" and (self.board()[i-1][j] == "X" or self.board()[i][j-1] == "X"):
+                    if board[i][j] == "X" and (board[i-1][j] == "X" or board[i][j-1] == "X"):
                         sunk+=1
         return sunk
     def points(self):
